@@ -1,6 +1,8 @@
 
 # Order
 
+*This model accepts additional fields of type Any.*
+
 ## Structure
 
 `Order`
@@ -9,22 +11,41 @@
 
 | Name | Type | Tags | Description |
 |  --- | --- | --- | --- |
-| `id` | `int` | Optional | - |
-| `pet_id` | `int` | Optional | - |
-| `quantity` | `int` | Optional | - |
-| `ship_date` | `datetime` | Optional | - |
-| `status` | [`Status1Enum`](../../doc/models/status-1-enum.md) | Optional | - |
-| `complete` | `bool` | Optional | - |
+| `order_id` | `str` | Optional | - |
+| `customer_id` | `str` | Optional | - |
+| `items` | [`List[OrderItem]`](../../doc/models/order-item.md) | Optional | - |
+| `total_amount` | `float` | Optional | - |
+| `status` | [`Status`](../../doc/models/status.md) | Optional | - |
+| `created_at` | `datetime` | Optional | - |
+| `updated_at` | `datetime` | Optional | - |
+| `additional_properties` | `Dict[str, Any]` | Optional | - |
 
 ## Example (as JSON)
 
 ```json
 {
-  "id": 180,
-  "petId": 220,
-  "quantity": 136,
-  "shipDate": "2016-03-13T12:52:32.123Z",
-  "status": "placed"
+  "orderId": "order_789",
+  "customerId": "cust_12345",
+  "totalAmount": 59.98,
+  "status": "pending",
+  "createdAt": "09/19/2025 10:30:00",
+  "updatedAt": "09/19/2025 10:30:00",
+  "items": [
+    {
+      "productId": "productId2",
+      "quantity": 22,
+      "price": 56.94,
+      "description": "description2",
+      "exampleAdditionalProperty": {
+        "key1": "val1",
+        "key2": "val2"
+      }
+    }
+  ],
+  "exampleAdditionalProperty": {
+    "key1": "val1",
+    "key2": "val2"
+  }
 }
 ```
 
