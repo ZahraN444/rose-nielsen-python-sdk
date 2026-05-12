@@ -19,11 +19,11 @@ The package is compatible with Python versions `3.7+`.
 Install the package from PyPi using the following pip command:
 
 ```bash
-pip install rose-nielsen-sdk==4.0.0
+pip install rose-nielsen-sdk==4.1.0
 ```
 
 You can also view the package at:
-https://pypi.python.org/pypi/rose-nielsen-sdk/4.0.0
+https://pypi.python.org/pypi/rose-nielsen-sdk/4.1.0
 
 ## Initialize the API Client
 
